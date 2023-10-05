@@ -1,12 +1,12 @@
 init_code = """
-if not "function" in USER_GLOBAL:
+if not "func" in USER_GLOBAL:
     raise NotImplementedError("Define function 'function'")
 
-function = USER_GLOBAL['function']
+func = USER_GLOBAL['func']
 
 from inspect import signature
 
-params = signature(function).parameters
+params = signature(func).parameters
 if params:
     raise NotImplementedError("'function' must not have arguments")
 
@@ -31,7 +31,7 @@ def prepare_test(test="", answer=None, middle_code="", show_code=None):
 TESTS = {
     "First": [
         prepare_test(middle_code='''''',
-                     test="function()",
+                     test="func()",
                      answer=None),
         ]
     }
