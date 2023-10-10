@@ -1,6 +1,6 @@
 init_code = """
 if not "func" in USER_GLOBAL:
-    raise NotImplementedError("Define function 'function'")
+    raise NotImplementedError("Define function 'func'")
 
 func = USER_GLOBAL['func']
 
@@ -8,7 +8,7 @@ from inspect import signature
 
 params = signature(func).parameters
 if params:
-    raise NotImplementedError("'function' must not have arguments")
+    raise NotImplementedError("'func' must not have arguments")
 
 """
 
